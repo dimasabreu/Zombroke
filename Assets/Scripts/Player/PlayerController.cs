@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    float eixoX;
-    float eixoZ;
-    Vector3 direcao;
+    private float eixoX;
+    private float eixoZ;
+    private Vector3 direcao;
+    [SerializeField]
+    private int velocidade = 10;
     void Update()
     {
         
         eixoX = Input.GetAxis("Horizontal");
         eixoZ = Input.GetAxis("Vertical");
         direcao = new Vector3(eixoX, 0, eixoZ);
-        transform.Translate(direcao);
+        transform.Translate(direcao * velocidade * Time.deltaTime);
     }
 }
