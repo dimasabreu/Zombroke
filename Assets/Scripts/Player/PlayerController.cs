@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    float eixoX;
+    float eixoZ;
+    Vector3 direcao;
     void Update()
     {
         
+        eixoX = Input.GetAxis("Horizontal");
+        eixoZ = Input.GetAxis("Vertical");
+        direcao = new Vector3(eixoX, 0, eixoZ);
+        transform.Translate(direcao);
     }
 }
