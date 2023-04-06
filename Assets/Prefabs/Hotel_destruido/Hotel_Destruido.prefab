@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 3180801089069620423}
   - component: {fileID: 3180801089068850407}
   - component: {fileID: 3180801089067720231}
+  - component: {fileID: 5329789988815497168}
   m_Layer: 0
   m_Name: Hotel_Destruido
   m_TagString: Untagged
@@ -251,3 +252,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5329789988815497168
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3180801089069646055}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 46.576195, y: 8.102947, z: 10.9782295}
+  m_Center: {x: -0.37936783, y: 3.2888546, z: -1.0669479}

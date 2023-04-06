@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 8264008734002118893}
   - component: {fileID: 8264008734000824525}
   - component: {fileID: 8264008733999825421}
+  - component: {fileID: 6581171770671373252}
   m_Layer: 0
   m_Name: Hotel_Secundario_Destruido
   m_TagString: Untagged
@@ -168,6 +169,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6581171770671373252
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8264008734002093261}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 37.065468, y: 5.3428125, z: 10.116483}
+  m_Center: {x: -0.16184235, y: 2.6714058, z: 0.8645041}
 --- !u!1 &8264008734002093263
 GameObject:
   m_ObjectHideFlags: 0
