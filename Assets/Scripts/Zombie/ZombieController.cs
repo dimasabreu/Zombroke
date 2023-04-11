@@ -7,6 +7,8 @@ public class ZombieController : MonoBehaviour
     [SerializeField] private GameObject player;
     private Rigidbody rb;
     public float speed = 5;
+    private Quaternion Rotation;
+    private Vector3 direcao;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -20,7 +22,18 @@ public class ZombieController : MonoBehaviour
 
     private void FixedUpdate() 
     {
-        Vector3 direcao = player.transform.position - transform.position;
-        rb.MovePosition(rb.position + direcao.normalized * speed * Time.deltaTime);
+        
+
+        float distancia = Vector3.Distance(transform.position, player.transform.position);
+
+        if(distancia > 1.6f)
+        {
+            direcao = player.transform.position - transform.position;
+            rb.MovePosition(rb.position + direcao.normalized * speed * Time.deltaTime);
+            
+            Rotation = Quaternion.LookRotation(direcao);
+            rb.MoveRotation(Rotation);
+        }
+        
     }
 }
