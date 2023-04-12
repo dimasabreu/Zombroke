@@ -10,4 +10,13 @@ public class BulletScript : MonoBehaviour
         GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + transform.forward * bulletSpeed * Time.deltaTime);
         
     }
+
+    private void OnTriggerEnter(Collider objetoDeColisao) 
+    {
+        if(objetoDeColisao.tag == "Inimigo")
+            Destroy(objetoDeColisao.gameObject);
+        
+        Destroy(gameObject);
+    }
+
 }
