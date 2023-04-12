@@ -7,8 +7,7 @@ public class PlayerController : MonoBehaviour
     private float eixoX;
     private float eixoZ;
     private Vector3 direcao;
-    [SerializeField]
-    private int velocidade = 10;
+    [SerializeField] private int velocidade = 10;
     private  Animator animator;
     private Rigidbody rb;
 

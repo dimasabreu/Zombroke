@@ -25,15 +25,19 @@ public class ZombieController : MonoBehaviour
         
 
         float distancia = Vector3.Distance(transform.position, player.transform.position);
-
-        if(distancia > 1.6f)
+        Rotation = Quaternion.LookRotation(direcao);
+        rb.MoveRotation(Rotation);
+        if(distancia > 2f)
         {
             direcao = player.transform.position - transform.position;
             rb.MovePosition(rb.position + direcao.normalized * speed * Time.deltaTime);
-            
-            Rotation = Quaternion.LookRotation(direcao);
-            rb.MoveRotation(Rotation);
+            GetComponent<Animator>().SetBool("Atacando", false);
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("Atacando", true);
         }
         
     }
+
 }
