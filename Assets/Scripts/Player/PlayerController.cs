@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         Time.timeScale = 1;
+        int geraTipoPlayer = Random.Range(1, 23);
+        transform.GetChild(geraTipoPlayer).gameObject.SetActive(true);
     }
     void Update()
     {

@@ -2557,7 +2557,7 @@ GameObject:
   - component: {fileID: 2040071555}
   m_Layer: 0
   m_Name: Personagens
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2652,6 +2652,8 @@ MonoBehaviour:
   MascaraChao:
     serializedVersion: 2
     m_Bits: 64
+  textoPerdeu: {fileID: 0}
+  Vivo: 1
 --- !u!54 &2040071559
 Rigidbody:
   m_ObjectHideFlags: 0
