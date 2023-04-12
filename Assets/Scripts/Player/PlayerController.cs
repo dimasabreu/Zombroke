@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private int velocidade = 10;
     private  Animator animator;
     private Rigidbody rb;
+
+    public LayerMask MascaraChao;
     private void Start() 
     {
         animator = GetComponent<Animator>();
@@ -38,5 +40,20 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate() {
         rb.MovePosition(rb.position + (direcao * velocidade * Time.deltaTime));
+
+        Ray raio = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Debug.DrawRay(raio.origin, raio.direction * 100, Color.red);
+
+        RaycastHit impacto;
+
+        if(Physics.Raycast(raio, out impacto, 100, MascaraChao))
+        {
+            Vector3 posicaoMiraJogador = impacto.point - transform.position;
+
+
+            Quaternion novaRotacao = Quaternion.LookRotation(posicaoMiraJogador);
+
+            rb.MoveRotation(novaRotacao);
+        }
     }
 }
