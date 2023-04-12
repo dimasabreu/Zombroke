@@ -40,4 +40,11 @@ public class ZombieController : MonoBehaviour
         
     }
 
+    void AtacaJogador()
+    {
+        Time.timeScale = 0;
+        player.GetComponent<PlayerController>().textoPerdeu.SetActive(true);
+        player.GetComponent<PlayerController>().Vivo = false;
+    }
+
 }

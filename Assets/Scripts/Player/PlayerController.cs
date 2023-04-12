@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,10 +13,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
 
     public LayerMask MascaraChao;
+    public GameObject textoPerdeu;
+    public bool Vivo = true;
     private void Start() 
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        Time.timeScale = 1;
     }
     void Update()
     {
@@ -35,6 +39,14 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.SetBool("Moving", false);
+        }
+
+        if(Vivo == false)
+        {
+            if(Input.GetButton("Fire1"))
+            {
+                SceneManager.LoadScene("Hotel_outside");
+            }
         }
     }
     private void FixedUpdate() {
